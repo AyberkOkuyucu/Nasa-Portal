@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Orion Nebulası (Örnek Veri)",
+    "date": "2024-01-15",
+    "media_type": "image",
+    "url": "https://apod.nasa.gov/apod/image/2508/OrionTrapezium_HubbleGendler_960.jpg",
+    "hdurl": "https://apod.nasa.gov/apod/image/2508/OrionTrapezium_HubbleGendler_960.jpg",
+    "explanation": "Bu örnek veri, NASA APOD API erişilemediğinde gösterilmek üzere hazırlanmıştır. Offline ve hata senaryoları için kullanılır."
+  },
+  {
+    "title": "Andromeda Galaksisi (Örnek Veri)",
+    "date": "2024-01-10",
+    "media_type": "image",
+    "url": "https://apod.nasa.gov/apod/image/2508/MeteorM31_hemmerich_960.jpg",
+    "hdurl": "https://apod.nasa.gov/apod/image/2508/MeteorM31_hemmerich_960.jpg",
+    "explanation": "Andromeda Galaksisi, Samanyolu’na en yakın büyük galaksidir. Bu veri Plan B (fallback) mekanizması kapsamında sunulmaktadır."
+  }
+]

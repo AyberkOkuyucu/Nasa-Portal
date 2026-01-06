@@ -1,0 +1,410 @@
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=M+PLUS+Rounded+1c&family=Mukta:wght@200;300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --bg-dark: #0f172a;
+  --card-bg: #121418;
+  --gold: #f59e0b;
+  --gold-hover: #d97706;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: #334155;
+    --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Kanit', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #000;
+  color: var(--text-main);
+   font-family: var(--font-main);
+}
+h1, h2, h3, h4, h5, h6,
+.navbar-brand {
+  font-family: var(--font-heading);
+  letter-spacing: 0.5px;
+}
+
+main {
+  background-color: #000;
+}
+
+/* Reset section spacing problems */
+section {
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================================
+   2. NAVBAR
+   ========================================================= */
+.navbar {
+  background-color: rgba(7, 9, 14, 0.95) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-brand {
+  color: var(--text-main) !important;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  color: var(--text-muted) !important;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--gold) !important;
+}
+
+/* =========================================================
+   3. BUTTONS
+   ========================================================= */
+.btn-warning {
+  background-color: var(--gold);
+  border: none;
+  color: #000;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 8px 16px;
+  transition: all 0.3s;
+}
+
+.btn-warning:hover {
+  background-color: var(--gold-hover);
+  color: #fff;
+}
+
+.btn-outline-warning {
+  color: var(--gold);
+  border-color: var(--border-color);
+}
+
+.btn-outline-warning:hover {
+  background-color: var(--card-bg);
+  border-color: var(--gold);
+}
+
+.btn-fav-square {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.btn-fav-square:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* =========================================================
+   4. FORMS
+   ========================================================= */
+.form-control {
+  background-color: #020617;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.form-control:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+}
+
+/* =========================================================
+   5. GLASS CARD (GLOBAL)
+   ========================================================= */
+.glass-card {
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* =========================================================
+   6. APOD SECTION (ZAMANDA YOLCULUK)
+   ========================================================= */
+#apod-section .form-control {
+  background-color: #020617;
+}
+
+#apod-section .btn-warning {
+  white-space: nowrap;
+}
+
+#apod-section .d-flex.gap-2 {
+  align-items: stretch;
+}
+
+#apod-section .col-lg-6:last-child {
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.95),
+    rgba(0, 0, 0, 0.75)
+  );
+}
+
+/* =========================================================
+   7. NASA GALLERY – FEATURED SLIDER
+   ========================================================= */
+
+/* Background Blur */
+#gallery-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(32px);
+  opacity: 0.3;
+  transform: scale(1.15);
+  transition: background-image 0.6s ease;
+  z-index: 0;
+}
+
+/* Search */
+.gallery-search {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 48px;
+}
+
+/* Slider Track */
+#nasa-slider {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Cards (Base) */
+.gallery-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  transition:
+    transform 0.6s cubic-bezier(0.16,1,0.3,1),
+    opacity 0.4s ease;
+}
+
+/* Card Positions */
+.gallery-card.pos-0 {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  z-index: 10;
+}
+
+.gallery-card.pos-1 {
+  transform: translate(calc(-50% + 360px), -50%) scale(0.9);
+  opacity: 0.75;
+}
+
+.gallery-card.pos--1 {
+  transform: translate(calc(-50% - 360px), -50%) scale(0.9);
+  opacity: 0.75;
+}
+
+.gallery-card.pos-2 {
+  transform: translate(calc(-50% + 720px), -50%) scale(0.75);
+  opacity: 0.4;
+}
+
+.gallery-card.pos--2 {
+  transform: translate(calc(-50% - 720px), -50%) scale(0.75);
+  opacity: 0.4;
+}
+
+.gallery-card.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Card Content */
+.gallery-card img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.gallery-card .p-3 {
+  padding: 16px;
+}
+
+/* Slider Arrows */
+#gallery-prev,
+#gallery-next {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  background-color: rgba(200, 95, 4, 0.57);
+  border: 1px solid var(--border-color);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+}
+
+#gallery-prev { left: 24px; }
+#gallery-next { right: 24px; }
+
+#gallery-prev:hover,
+#gallery-next:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* =========================================================
+   8. FOOTER
+   ========================================================= */
+footer {
+  background-color: rgb(7, 9, 14);
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 40px 0;
+}
+
+footer h5 {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+footer a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--gold);
+}
+
+/* =========================================================
+   9. SCROLLBAR
+   ========================================================= */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090a0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* =========================================================
+   10. UTILITIES
+   ========================================================= */
+.text-gradient {
+  background: linear-gradient(to right, #eab308, #f97316, #ef4444);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.navbar-toggler {
+  box-shadow: none;
+}
+
+.navbar-collapse {
+  background: rgba(7, 9, 14, 0.98);
+  padding: 16px 0;
+}
+
+@media (min-width: 992px) {
+  .navbar-collapse {
+    background: transparent;
+    padding: 0;
+    
+  }
+  
+}
+.hero-earth {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* 🔥 KRİTİK */
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+header,
+#intro {
+  position: relative;
+  z-index: 2;
+}
+
+/* MOBİL */
+@media (max-width: 768px) {
+  .hero-earth {
+    width: 100%;
+    height: 100vh;
+    opacity: 0.35;
+  }
+}
+/* =========================================================
+   APOD SPLIT COLORS
+   ========================================================= */
+
+.apod-left {
+  background-color: #0f172a; /* koyu gri */
+}
+
+.apod-right {
+  background-color: #000; /* siyah */
+}
+
+/* mobil padding fix */
+@media (max-width: 768px) {
+  .apod-left,
+  .apod-right {
+    padding: 2.5rem 1.25rem;
+  }
+}
+#apod-container {
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.apod-right {
+  background: linear-gradient(
+    to left,
+    #000 0%,
+    #020617 100%
+  );
+}

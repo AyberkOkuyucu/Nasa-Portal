@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <!-- ================= META & SAYFA BAŞLIĞI ================= -->
+    <meta charset="UTF-8" />
+    <title>Hakkımızda | NASA Uzay Portalı</title>
+
+    <!-- ================= CSS KÜTÜPHANELERİ ================= -->
+    <!-- Bootstrap: responsive grid ve temel UI bileşenleri -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome: ikonlar -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Sayfa bazlı özel stiller -->
+    <link rel="stylesheet" href="/src/css/pages.css" />
+  </head>
+
+  <body class="bg-dark text-light d-flex flex-column min-vh-100 page-about">
+    <!-- =========================================================
+         SABİT ARKA PLAN GÖRSELİ
+         Sadece About sayfasına özel, CSS ile kontrol edilir
+    ========================================================== -->
+    <img src="img/about.jpg" alt="Earth" class="about-bg-image" />
+
+    <!-- Karanlık overlay (okunabilirlik için) -->
+    <div
+      class="position-fixed top-0 start-0 w-100 h-100"
+      style="background: rgba(0, 0, 0, 0.6); z-index: 1; pointer-events: none"
+    ></div>
+
+    <!-- ================= HEADER / NAVBAR ================= -->
+    <header class="position-relative" style="z-index: 2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+        <div class="container py-3">
+          <!-- LOGO + PROJE ADI -->
+          <a
+            href="index.html"
+            class="navbar-brand d-flex align-items-center gap-2 text-uppercase fw-bold"
+          >
+            <img
+              src="/public/icons/icons8-nasa-192.png"
+              alt="NASA Logo"
+              height="56"
+            />
+            NASA PORTAL
+          </a>
+
+          <!-- MOBİL MENU TOGGLER -->
+          <button
+            class="navbar-toggler border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- NAVIGATION MENÜ -->
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="mainNavbar"
+          >
+            <ul class="navbar-nav gap-lg-4 text-uppercase fw-semibold">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Ana Sayfa</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="archive.html">Arşiv</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="favorites.html">Favoriler</a>
+              </li>
+              <li class="nav-item">
+                <!-- Aktif sayfa vurgusu -->
+                <a class="nav-link active" href="about.html">Hakkımızda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">İletişim</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Header alt ayırıcı çizgi -->
+      <hr class="border-light opacity-25 m-0" />
+    </header>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main
+      class="container py-5 flex-grow-1 position-relative"
+      style="z-index: 2"
+    >
+      <div class="row justify-content-center">
+        <!-- Ana içerik kutusu -->
+        <div
+          class="col-12 col-md-8 bg-secondary bg-opacity-10 p-3 p-md-5 rounded-4 border border-secondary"
+        >
+          <!-- SAYFA BAŞLIĞI -->
+          <h2 class="text-warning mb-4">Hakkımızda</h2>
+
+          <!-- KURUMSAL TANITIM -->
+          <p class="lead">
+            <strong>NASA Uzay Portalı</strong>, uzay ve astronomi alanındaki
+            güncel verileri kullanıcılarla buluşturmak amacıyla geliştirilmiş,
+            mobil uyumlu ve modern bir web uygulamasıdır.
+          </p>
+
+          <p class="opacity-75">
+            Uygulama; NASA tarafından sunulan açık veri servisleri aracılığıyla
+            günlük astronomi görsellerini, asteroit takip verilerini, uzay hava
+            olaylarını ve NASA Görsel Kütüphanesi içeriklerini tek bir
+            platformda sunar.
+          </p>
+
+          <p class="opacity-75">
+            Bu proje, gerçek bir <strong>kurumsal web sitesi</strong> senaryosu
+            temel alınarak tasarlanmış olup; kullanıcı deneyimi, erişilebilirlik
+            ve performans öncelikleri gözetilmiştir.
+          </p>
+
+          <hr class="border-secondary my-4" />
+
+          <!-- ================= TEKNİK ALTYAPI ================= -->
+          <h4 class="text-info h5 mb-3">Teknik Altyapı</h4>
+
+          <ul class="list-unstyled">
+            <!-- API BİLGİSİ -->
+            <li class="mb-2">
+              <strong>Kullanılan API’ler:</strong>
+              <a
+                href="https://api.nasa.gov/"
+                target="_blank"
+                class="link-warning"
+              >
+                NASA Open APIs
+              </a>
+              <div class="small opacity-75 mt-1">
+                APOD, NeoWs (Asteroid Radar), DONKI (Space Weather), NASA Image
+                & Video Library
+              </div>
+            </li>
+
+            <!-- CSS ÇATISI -->
+            <li class="mb-2">
+              <strong>CSS Çatısı:</strong>
+              <a
+                href="https://getbootstrap.com/"
+                target="_blank"
+                class="link-warning"
+              >
+                Bootstrap 5.3
+              </a>
+              <div class="small opacity-75 mt-1">
+                Responsive grid sistemi ve hazır UI bileşenleri kullanılmıştır.
+              </div>
+            </li>
+
+            <!-- GELİŞTİRME YAKLAŞIMI -->
+            <li class="mb-2">
+              <strong>Geliştirme Yaklaşımı:</strong>
+              <div class="small opacity-75 mt-1">
+                Vanilla JavaScript, modüler dosya yapısı ve API hata yönetimi
+                prensipleri uygulanmıştır.
+              </div>
+            </li>
+          </ul>
+
+          <!-- ================= OFFLINE / PWA AÇIKLAMASI ================= -->
+          <div class="p-4 bg-dark rounded-3 border border-secondary mt-4">
+            <h5 class="text-success h6 mb-2">
+              <i class="fa-solid fa-wifi me-2"></i>
+              Offline (Çevrimdışı) Çalışma Mantığı
+            </h5>
+
+            <p class="small text-secondary m-0">
+              Bu uygulama Progressive Web App (PWA) standartlarına uygun olarak
+              geliştirilmiştir. Service Worker sayesinde HTML, CSS ve JavaScript
+              dosyaları cache’lenir; internet bağlantısı olmadığında bile daha
+              önce ziyaret edilen sayfalar görüntülenebilir. API erişilemediği
+              durumlarda örnek (sample) veriler otomatik olarak devreye girer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <!-- Index sayfası ile birebir aynı yapı kullanılmıştır -->
+    <footer class="position-relative" style="z-index: 2">
+      <div class="container py-5">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <h5 class="d-flex align-items-center gap-2">
+              <i class="fa-solid fa-shuttle-space"></i> NASA PORTAL
+            </h5>
+            <p class="small opacity-75">
+              Uzay meraklıları için geliştirilmiş modern, interaktif ve PWA
+              uyumlu NASA veri platformu.
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-6">
+            <h5>Hızlı Erişim</h5>
+            <ul class="list-unstyled d-flex flex-column gap-2 small">
+              <li><a href="index.html">Ana Sayfa</a></li>
+              <li><a href="archive.html">Arşiv</a></li>
+              <li><a href="favorites.html">Favoriler</a></li>
+              <li><a href="about.html">Hakkımızda</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6">
+            <h5>Kaynaklar</h5>
+            <ul class="list-unstyled d-flex flex-column gap-2 small">
+              <li><a href="#">NASA API</a></li>
+              <li><a href="#">NASA Official</a></li>
+              <li><a href="contact.html">İletişim</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4">
+            <h5>Teknoloji</h5>
+            <p class="small opacity-75">
+              Bootstrap 5, Vanilla JS ve NASA Open APIs ile geliştirilmiştir.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="text-center pt-4 mt-4 border-top border-secondary opacity-50 small"
+        >
+          &copy; 2026 NASA Portal. Eğitim amaçlı geliştirilmiştir.
+        </div>
+      </div>
+    </footer>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

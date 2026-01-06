@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <!-- ================= META & SAYFA BAŞLIĞI ================= -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>İletişim | NASA Uzay Portalı</title>
+
+    <!-- ================= CSS KÜTÜPHANELERİ ================= -->
+    <!-- Bootstrap: responsive grid ve form bileşenleri -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome: ikonlar -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Sayfa bazlı ortak stiller -->
+    <link rel="stylesheet" href="src/css/pages.css" />
+  </head>
+
+  <body class="bg-dark text-light d-flex flex-column min-vh-100 page-contact">
+    <!-- =========================================================
+         HEADER / NAVBAR
+         Index sayfası ile aynı yapı korunmuştur
+    ========================================================== -->
+    <header class="position-relative" style="z-index: 2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+        <div class="container py-3">
+          <!-- LOGO + PROJE ADI -->
+          <a
+            href="index.html"
+            class="navbar-brand d-flex align-items-center gap-2 text-uppercase fw-bold"
+          >
+            <img
+              src="/public/icons/icons8-nasa-192.png"
+              alt="NASA Logo"
+              height="56"
+            />
+            NASA PORTAL
+          </a>
+
+          <!-- MOBİL MENU TOGGLER -->
+          <button
+            class="navbar-toggler border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- NAVIGATION MENÜ -->
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="mainNavbar"
+          >
+            <ul class="navbar-nav gap-lg-4 text-uppercase fw-semibold">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Ana Sayfa</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="archive.html">Arşiv</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="favorites.html">Favoriler</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">Hakkımızda</a>
+              </li>
+              <li class="nav-item">
+                <!-- Aktif sayfa -->
+                <a class="nav-link active" href="contact.html">İletişim</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Header alt ayırıcı -->
+      <hr class="border-light opacity-25 m-0" />
+    </header>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="container py-5 flex-grow-1">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <!-- ================= İLETİŞİM FORMU KARTI ================= -->
+          <div class="glass-card p-4">
+            <h3 class="text-center mb-4">
+              <i class="fa-solid fa-paper-plane me-2"></i> Bize Ulaşın
+            </h3>
+
+            <!-- =====================================================
+                 İLETİŞİM FORMU
+                 UI odaklı, client-side validation uygulanmıştır
+            ====================================================== -->
+            <form id="contact-form" class="needs-validation" novalidate>
+              <!-- AD SOYAD -->
+              <div class="mb-3">
+                <label class="form-label">
+                  <i class="fa-solid fa-user me-1"></i> Ad Soyad
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Adınız ve soyadınız"
+                  required
+                />
+                <div class="invalid-feedback">Bu alan zorunludur.</div>
+              </div>
+
+              <!-- E-POSTA -->
+              <div class="mb-3">
+                <label class="form-label">
+                  <i class="fa-solid fa-envelope me-1"></i> E-posta
+                </label>
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="ornek@email.com"
+                  required
+                />
+                <div class="invalid-feedback">Geçerli bir e-posta giriniz.</div>
+              </div>
+
+              <!-- MESAJ -->
+              <div class="mb-3">
+                <label class="form-label">
+                  <i class="fa-solid fa-comment-dots me-1"></i> Mesajınız
+                </label>
+                <textarea
+                  class="form-control"
+                  rows="4"
+                  placeholder="Mesajınızı buraya yazın..."
+                  required
+                ></textarea>
+                <div class="invalid-feedback">Mesaj alanı boş olamaz.</div>
+              </div>
+
+              <!-- GÖNDER BUTONU -->
+              <button type="submit" class="btn btn-warning w-100 fw-bold py-2">
+                <i class="fa-solid fa-rocket me-1"></i> Gönder
+              </button>
+            </form>
+            <!-- BAŞARI MESAJI -->
+            <div
+              id="form-success"
+              class="alert alert-success mt-3 d-none text-center"
+            >
+              <strong>
+                <i class="fa-solid fa-circle-check me-1"></i> Başarılı!
+              </strong>
+              Mesajınız başarıyla iletildi.
+            </div>
+
+            <!-- HATA MESAJI -->
+            <div
+              id="form-error"
+              class="alert alert-danger mt-3 d-none text-center"
+            >
+              <strong>
+                <i class="fa-solid fa-triangle-exclamation me-1"></i> Hata!
+              </strong>
+              Lütfen tüm alanları doğru doldurun.
+            </div>
+
+            <!-- ================= BAŞARI MESAJI ================= -->
+            <!-- Gerçek veri gönderimi yok, UI geri bildirimi amaçlı -->
+            <div
+              id="form-msg"
+              class="alert alert-success mt-3 d-none text-center"
+            >
+              <strong>
+                <i class="fa-solid fa-circle-check me-1"></i> Başarılı!
+              </strong>
+              Mesajınız başarıyla iletildi.
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <!-- Index ve diğer sayfalar ile tutarlı yapı -->
+    <footer>
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <h5 class="d-flex align-items-center gap-2">
+              <i class="fa-solid fa-shuttle-space"></i> NASA PORTAL
+            </h5>
+            <p class="small opacity-75">
+              Uzay meraklıları için geliştirilmiş modern, interaktif ve PWA
+              uyumlu NASA veri platformu.
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-6">
+            <h5>Hızlı Erişim</h5>
+            <ul class="list-unstyled d-flex flex-column gap-2 small">
+              <li><a href="index.html">Ana Sayfa</a></li>
+              <li><a href="archive.html">Arşiv</a></li>
+              <li><a href="favorites.html">Favoriler</a></li>
+              <li><a href="about.html">Hakkımızda</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6">
+            <h5>Kaynaklar</h5>
+            <ul class="list-unstyled d-flex flex-column gap-2 small">
+              <li><a href="#">NASA API</a></li>
+              <li><a href="#">NASA Official</a></li>
+              <li><a href="contact.html">İletişim</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4">
+            <h5>Teknoloji</h5>
+            <p class="small opacity-75">
+              Bootstrap 5, Vanilla JS ve NASA Open APIs ile geliştirilmiştir.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="text-center pt-4 mt-4 border-top border-secondary opacity-50 small"
+        >
+          &copy; 2026 NASA Portal. Eğitim amaçlı geliştirilmiştir.
+        </div>
+      </div>
+    </footer>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      (() => {
+        const form = document.getElementById("contact-form");
+        const successMsg = document.getElementById("form-success");
+        const errorMsg = document.getElementById("form-error");
+
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+
+          // Bootstrap validation
+          if (!form.checkValidity()) {
+            form.classList.add("was-validated");
+
+            successMsg.classList.add("d-none");
+            errorMsg.classList.remove("d-none");
+            return;
+          }
+
+          // Başarılı senaryo
+          errorMsg.classList.add("d-none");
+          successMsg.classList.remove("d-none");
+
+          // Formu temizle
+          form.reset();
+          form.classList.remove("was-validated");
+
+          // 4 sn sonra mesajı gizle
+          setTimeout(() => {
+            successMsg.classList.add("d-none");
+          }, 4000);
+        });
+      })();
+    </script>
+  </body>
+</html>

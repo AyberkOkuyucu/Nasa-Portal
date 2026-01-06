@@ -1,0 +1,27 @@
+{
+  "near_earth_objects": {
+    "2026-01-05": [
+      {
+        "name": "Sample Asteroid 2026",
+        "absolute_magnitude_h": 22.1,
+        "estimated_diameter": {
+          "kilometers": {
+            "estimated_diameter_min": 0.08,
+            "estimated_diameter_max": 0.15
+          }
+        },
+        "is_potentially_hazardous_asteroid": false,
+        "close_approach_data": [
+          {
+            "relative_velocity": {
+              "kilometers_per_hour": "45000"
+            },
+            "miss_distance": {
+              "kilometers": "720000"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

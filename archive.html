@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <!-- ================= META & SAYFA BAŞLIĞI ================= -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uzay Arşivi | NASA Uzay Portalı</title>
+
+    <!-- ================= CSS KÜTÜPHANELERİ ================= -->
+    <!-- Bootstrap: responsive grid ve layout -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome: ikonlar -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Ana stil dosyası -->
+    <link rel="stylesheet" href="src/css/style.css" />
+  </head>
+
+  <body class="bg-dark text-light d-flex flex-column min-vh-100 page-archive">
+    <!-- =========================================================
+         SABİT ARKA PLAN GÖRSELİ
+         Arşiv sayfasına özel atmosfer oluşturur
+    ========================================================== -->
+    <img
+      src="img/favorites.jpg"
+      alt="Earth"
+      class="position-fixed top-50 start-50 translate-middle"
+      style="height: 120vh; opacity: 0.6; z-index: 0; pointer-events: none"
+    />
+
+    <!-- Karanlık overlay (okunabilirlik için) -->
+    <div
+      class="position-fixed top-0 start-0 w-100 h-100"
+      style="background: rgba(0, 0, 0, 0.6); z-index: 1; pointer-events: none"
+    ></div>
+
+    <!-- ================= HEADER / NAVBAR ================= -->
+    <!-- Index sayfası ile aynı yapı korunmuştur -->
+    <header class="position-relative" style="z-index: 2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+        <div class="container py-3">
+          <!-- LOGO + PROJE ADI -->
+          <a
+            href="index.html"
+            class="navbar-brand d-flex align-items-center gap-2 text-uppercase fw-bold"
+          >
+            <img
+              src="/public/icons/icons8-nasa-192.png"
+              alt="NASA Logo"
+              height="56"
+            />
+            NASA PORTAL
+          </a>
+
+          <!-- MOBİL MENU TOGGLER -->
+          <button
+            class="navbar-toggler border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- NAVIGATION MENÜ -->
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="mainNavbar"
+          >
+            <ul class="navbar-nav gap-lg-4 text-uppercase fw-semibold">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Ana Sayfa</a>
+              </li>
+              <li class="nav-item">
+                <!-- Aktif sayfa -->
+                <a class="nav-link active" href="archive.html">Arşiv</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="favorites.html">Favoriler</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">Hakkımızda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">İletişim</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Header alt ayırıcı -->
+      <hr class="border-light opacity-25 m-0" />
+    </header>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main
+      class="container py-5 flex-grow-1 position-relative"
+      style="z-index: 2"
+    >
+      <!-- =====================================================
+           SAYFA BAŞLIĞI & KONTROLLER
+      ====================================================== -->
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-md-8">
+          <h2 class="text-warning fw-bold display-5 text-uppercase">
+            <i class="fa-solid fa-images me-2"></i> Uzay Arşivi
+          </h2>
+
+          <!-- Arşivi yeniden yükleme butonu -->
+          <button
+            id="refresh-archive"
+            class="btn btn-sm btn-outline-warning fw-bold mt-3"
+          >
+            <i class="fa-solid fa-arrows-rotate me-1"></i> Arşivi Yenile
+          </button>
+
+          <p class="opacity-75 mt-3">
+            NASA Arşivinden rastgele seçilmiş 9 görsel içerik.
+          </p>
+        </div>
+      </div>
+
+      <!-- =====================================================
+           ARŞİV SONUÇLARI
+           İçerik JS üzerinden dinamik olarak doldurulur
+      ====================================================== -->
+      <div id="archive-result" class="row justify-content-center g-4"></div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <!-- Sayfa boyu kısa olsa bile altta sabit kalır -->
+    <footer class="position-relative mt-auto" style="z-index: 2">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <h5 class="d-flex align-items-center gap-2">
+              <i class="fa-solid fa-shuttle-space"></i> NASA PORTAL
+            </h5>
+            <p class="small opacity-75">
+              Uzay meraklıları için geliştirilmiş modern, interaktif ve PWA
+              uyumlu NASA veri platformu.
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-6">
+            <h5>Hızlı Erişim</h5>
+            <ul class="list-unstyled d-flex flex-column gap-2 small">
+              <li><a href="index.html">Ana Sayfa</a></li>
+              <li><a href="archive.html">Arşiv</a></li>
+              <li><a href="favorites.html">Favoriler</a></li>
+              <li><a href="about.html">Hakkımızda</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6">
+            <h5>Kaynaklar</h5>
+            <ul class="list-unstyled d-flex flex-column gap-2 small">
+              <li><a href="#">NASA API</a></li>
+              <li><a href="#">NASA Official</a></li>
+              <li><a href="contact.html">İletişim</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4">
+            <h5>Teknoloji</h5>
+            <p class="small opacity-75">
+              Bootstrap 5, Vanilla JS ve NASA Open APIs ile geliştirilmiştir.
+              PWA standartlarını destekler.
+            </p>
+            <div class="d-flex gap-2">
+              <a href="#" class="btn btn-fav-square">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="#" class="btn btn-fav-square">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a href="#" class="btn btn-fav-square">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="text-center pt-4 mt-4 border-top border-secondary opacity-50 small"
+        >
+          &copy; 2026 NASA Portal. Eğitim amaçlı geliştirilmiştir.
+        </div>
+      </div>
+    </footer>
+
+    <!-- =========================================================
+         ARŞİV LIGHTBOX MODALI
+         Seçilen görsel detaylı önizleme için kullanılır
+    ========================================================== -->
+    <div
+      class="modal fade"
+      id="archiveLightboxModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content bg-dark border-secondary text-light">
+          <div class="modal-header border-secondary">
+            <h5 class="modal-title text-warning fw-bold" id="lb-title"></h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <div class="modal-body p-0 text-center bg-black position-relative">
+            <img
+              id="lb-image"
+              class="img-fluid"
+              style="max-height: 80vh; object-fit: contain"
+            />
+          </div>
+
+          <div class="modal-footer border-secondary justify-content-between">
+            <small class="text-info" id="lb-date"></small>
+            <p
+              class="m-0 small opacity-75 text-end text-truncate"
+              style="max-width: 70%"
+              id="lb-desc"
+            ></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="src/js/archive-logic.js"></script>
+  </body>
+</html>

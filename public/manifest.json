@@ -1,0 +1,22 @@
+{
+  "short_name": "NASA APOD",
+  "name": "NASA Astronomy Picture of the Day",
+  "description": "Her gün NASA'dan büyüleyici bir uzay karesi ve bilgisi.",
+  "icons": [
+    {
+      "src": "public/icons/icons8-nasa-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "public/icons/icons8-nasa-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#0b3d91",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#000000"
+}

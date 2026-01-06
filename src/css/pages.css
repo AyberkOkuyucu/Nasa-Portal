@@ -1,0 +1,468 @@
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=M+PLUS+Rounded+1c&family=Mukta:wght@200;300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --bg-dark: #0f172a;       /* Çok koyu lacivert (React projesindeki arka plan) */
+    --card-bg: #121418;       /* Kart arka planı */
+    --gold: #f59e0b;          /* O özel Altın Sarısı */
+    --gold-hover: #d97706;    /* Butona gelinceki koyu sarı */
+    --text-main: #f8fafc;     /* Beyazımsı metin */
+    --text-muted: #94a3b8;    /* Gri metin */
+    --border-color: #334155;  /* İnce gri kenarlıklar */
+    
+  --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Kanit', sans-serif;
+
+
+}
+body {
+    display: flex;       /* Esnek kutu yapısı */
+    flex-direction: column; /* Öğeleri alt alta diz */
+    min-height: 100vh;   /* Sayfa en az ekran boyu kadar olsun */
+   
+  font-family: var(--font-main);
+
+
+}
+h1, h2, h3, h4, h5, h6,
+.navbar-brand {
+  font-family: var(--font-heading);
+  letter-spacing: 0.5px;
+}
+
+main {
+    flex: 1;             /* Boş kalan tüm alanı doldur ve Footer'ı it */
+}
+/* 2. NAVBAR (Menü) */
+.navbar {
+ 
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+.navbar-brand {
+    color: var(--text-main) !important;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.nav-link {
+    color: var(--text-muted) !important;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+.nav-link:hover, .nav-link.active {
+    color: var(--gold) !important;
+}
+/* 3. KART TASARIMLARI (Ekran Görüntüsündeki Gibi) */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px; /* Köşeleri yuvarlat */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border-color: var(--gold); /* Üzerine gelince kenarlık sarı olsun */
+}
+.card-title {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+.card-text, .text-secondary {
+    color: var(--text-muted) !important;
+    font-size: 0.85rem;
+}
+/* 4. BUTONLAR */
+/* Sarı Butonlar (Detay, Getir, Ara) */
+.btn-warning {
+    background-color: var(--gold);
+    border: none;
+    color: #000;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 8px 16px;
+    transition: all 0.3s;
+}
+.btn-warning:hover {
+    background-color: var(--gold-hover);
+    color: #fff;
+}
+/* İçi Boş Sarı Butonlar (Geri Dön vb.) */
+.btn-outline-warning {
+    color: var(--gold);
+    border-color: var(--border-color);
+    background: transparent;
+}
+.btn-outline-warning:hover {
+    background-color: var(--card-bg);
+    border-color: var(--gold);
+    color: var(--gold);
+}
+/* Favori Butonu (Kare olan) */
+.btn-fav-square {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+.btn-fav-square:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+/* 5. FORM INPUTLARI */
+.form-control {
+    background-color: #020617; /* Simsiyah iç */
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    border-radius: 8px;
+    padding: 10px;
+}
+.form-control:focus {
+    background-color: #020617;
+    color: #fff;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+}
+/* 6. HEADER & SIDEBAR KUTULARI */
+.glass-card, .content-wrapper {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 20px;
+}
+/* 7. FOOTER */
+footer {
+  background-color: rgb(7, 9, 14);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 40px 0;
+    margin-top: 60px;
+}
+footer h5 {
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+footer a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: 0.3s;
+}
+footer a:hover {
+    color: var(--gold);
+}
+/* Scrollbar (Kaydırma Çubuğu) */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold);
+}
+/* --- style.css dosyasının en altına ekle --- */
+/* 1. Sidebar Paneli (React Görünümü İçin) */
+.sidebar-panel {
+    background-color: #0f172a; /* Çok koyu lacivert */
+}
+/* 2. NEO Radar İçindeki Kartlar */
+/* app.js içinde oluşturulan her bir asteroid div'i için stil */
+.neo-card {
+    background-color: rgba(30, 41, 59, 0.6); /* Yarı saydam gri */
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 12px;
+    transition: all 0.2s;
+}
+.neo-card:hover {
+    background-color: rgba(30, 41, 59, 1);
+    border-color: var(--gold);
+}
+/* 3. Yanıp Sönen Kırmızı Nokta (Live Dot) */
+.live-dot-pulse {
+    width: 10px;
+    height: 10px;
+    background-color: #ef4444; /* Kırmızı */
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    animation: pulse-red 2s infinite;
+}
+@keyframes pulse-red {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(239, 68, 68, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+    }
+}/* Rastgele Yıldız Efekti (CSS ile) */
+.space-background {
+    background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 4px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 3px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 3px);
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+    background-attachment: fixed; /* Scroll yaparken yıldızlar sabit kalsın */
+}
+/* 2. Tek Tip Kart Tasarımı (Glass Card) */
+/* Hem üstteki hem alttaki kartlar artık bu class'ı kullanıyor */
+.glass-card {
+    background-color: rgba(0, 0, 0, 0.75); /* Arkası hafif görünen koyu lacivert */
+    backdrop-filter: blur(12px);              /* Buzlu cam efekti */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* 3. NASA Logo Parlaması */
+.hero-logo-large {
+    filter: drop-shadow(0 0 10px rgba(66, 153, 225, 0.5));
+    animation: nasa-glow 3s infinite alternate;
+}
+
+
+/* 4. Güneş Parlaması (SVG) */
+.sun-container svg {
+    filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.4));
+    animation: sun-pulse 8s infinite ease-in-out;
+}
+@keyframes sun-pulse {
+    0% { filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.4)); }
+    50% { filter: drop-shadow(0 0 60px rgba(245, 158, 11, 1)); }
+}
+/* 5. Scrollbar İyileştirmesi (Opsiyonel) */
+::-webkit-scrollbar-track {
+    background: #090A0F; 
+}@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px); /* 30px soldan başla */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Yerine otur */
+    }
+}
+.page-animate {
+    /* Animasyon süresi 0.8 saniye, yumuşak bitiş (ease-out) */
+    animation: slideInLeft 0.8s ease-out forwards;
+}
+/* 2. Kartların Aşağıdan Tek Tek Gelmesi (Opsiyonel ama çok şık) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Bu sınıfı özel olarak kartlara verirsen onlar da efektli gelir */
+.animate-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0; /* Başlangıçta görünmesin, animasyonla gelsin */
+}
+/* Gecikme süreleri: Kartlar sırayla gelsin diye */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+/* --- GİRİŞ ANİMASYONLARI (React Tarzı) --- */
+/* 1. Aşağıdan Yukarı Süzülme (Kartlar İçin) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* 30px aşağıdan başla */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* 2. Soldan Sağa Kayma (Başlık İçin) */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px); /* 30px soldan başla */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* 3. Yanıp Sönme (Canlı Veri Noktaları İçin) */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+/* --- KULLANACAĞIN SINIFLAR --- */
+/* Kartlara bunu ver: Aşağıdan gelir */
+.animate-fade-up {
+    opacity: 0; /* Başlangıçta gizle */
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; /* Yumuşak geçiş */
+}
+/* Başlığa bunu ver: Soldan gelir */
+.animate-slide-left {
+    opacity: 0;
+    animation: slideInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+/* Gecikmeler (Sırayla gelmeleri için) */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+/* --- EKSTRA: O React'teki Renkli Başlık --- */
+.text-gradient {
+    background: linear-gradient(to right, #eab308, #f97316, #ef4444); /* Sarı -> Turuncu -> Kırmızı */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+/* Canlı Veri Noktaları */
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+/* ================= ARKA PLAN YÖNETİMİ ================= */
+/* Resmi HTML'den değil buradan çekiyoruz ki mobilde bozulmasın */
+.bg-space-fixed {
+    /* Resim yolunu klasör yapına göre kontrol et (../img/about.jpg olabilir) */
+    background: url('../../img/about.jpg') no-repeat center center fixed;
+    background-size: cover; /* Resmi ekrana orantılı sığdırır */
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Karanlık Filtre */
+.bg-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Mobilde okunabilirliği artırmak için içerik kutusuna 'blur' efekti */
+.content-box {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+/* =========================================================
+   SAFE RESPONSIVE – ONLY ABOUT PAGE
+   ========================================================= */
+
+/* TABLET VE ALT */
+@media (max-width: 991px) {
+
+  .page-about .navbar-nav {
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .page-about .navbar-brand img {
+    height: 42px;
+  }
+
+}
+
+/* MOBİL */
+@media (max-width: 768px) {
+
+  .page-about main {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+
+
+  .page-about h2 {
+    font-size: 1.5rem;
+  }
+
+  .page-about p.lead {
+    font-size: 0.95rem;
+  }
+
+  /* Sadece ABOUT arka plan resmi */
+  .page-about > img {
+    height: 100vh;
+    opacity: 0.35;
+  }
+
+  /* Footer sadece about’ta ortalansın */
+  .page-about footer {
+    text-align: center;
+  }
+
+  .page-about footer .d-flex {
+    justify-content: center;
+  }
+
+}
+
+/* ÇOK KÜÇÜK TELEFON */
+@media (max-width: 480px) {
+
+  .page-about .col-md-8 {
+    padding: 1.25rem !important;
+  }
+
+  .page-about h2 {
+    font-size: 1.35rem;
+  }
+
+}
+/* ================= ABOUT BACKGROUND ================= */
+
+.page-about .about-bg-image {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 120vh;
+  width: auto;
+  opacity: 0.6;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* MOBİL */
+@media (max-width: 768px) {
+  .page-about .about-bg-image {
+    height: 100vh;
+    opacity: 0.35;
+  }
+}
