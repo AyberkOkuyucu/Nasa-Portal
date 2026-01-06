@@ -9,7 +9,7 @@ Uygulama, NASA tarafından sunulan açık veri servislerini kullanarak uzay ve a
 ## Canlı Demo ve Tanıtım Videosu
 
 Canlı Demo:  
-[Canlı demo linki buraya eklenecektir]
+[https://ayberkokuyucu.github.io/Nasa-Portal/]
 
 Tanıtım Videosu:  
 [Video linki buraya eklenecektir]
