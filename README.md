@@ -12,7 +12,7 @@ Canlı Demo:
 [https://ayberkokuyucu.github.io/Nasa-Portal/]
 
 Tanıtım Videosu:  
-[Video linki buraya eklenecektir]
+[https://www.youtube.com/watch?v=aabGIMuP8Ig]
 
 ---
 
