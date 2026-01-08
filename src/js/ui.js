@@ -48,7 +48,7 @@ export function renderApod(data, containerId) {
         <div class="position-relative overflow-hidden rounded-top">
             <img 
                 src="${data.url}"
-                onerror="this.onerror=null; this.src='/public/icons/icons8-nasa-512.png';"
+                onerror="this.onerror=null; this.src='./public/icons/icons8-nasa-512.png';"
                 class="w-100"
                 style="max-height: 340px; object-fit: cover;"
                 alt="${data.title}"
@@ -94,7 +94,7 @@ export function renderApod(data, containerId) {
         }
 
                         <a
-                            href="detail.html?date=${data.date}"
+                            href="./detail.html?date=${data.date}"
                             class="btn btn-outline-info btn-sm"
                         >
                             <i class="fa-solid fa-circle-info"></i>
@@ -277,7 +277,7 @@ export function initNasaGallery(results) {
 
                 <div class="d-flex gap-2">
                     <a
-                        href="library-detail.html?id=${i}"
+                        href="./library-detail.html?id=${i}"
                         class="btn btn-outline-warning btn-sm w-100"
                     >
                         Detay
