@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         
                         <div class="mt-auto d-flex gap-2">
                             <a
-                                href="detail.html?date=${item.date}"
+                                href="./detail.html?date=${item.date}"
                                 class="btn btn-sm btn-outline-info flex-grow-1"
                             >
                                 <i class="fa-solid fa-circle-info me-1"></i>
