@@ -353,7 +353,7 @@ footer a:hover {
 /* Resmi HTML'den değil buradan çekiyoruz ki mobilde bozulmasın */
 .bg-space-fixed {
     /* Resim yolunu klasör yapına göre kontrol et (../img/about.jpg olabilir) */
-    background: url('../../img/about.jpg') no-repeat center center fixed;
+    background: url('../img/about.jpg'); no-repeat center center fixed;
     background-size: cover; /* Resmi ekrana orantılı sığdırır */
     width: 100%;
     height: 100vh;
