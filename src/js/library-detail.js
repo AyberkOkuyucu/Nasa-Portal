@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           <div class="alert alert-warning text-center mt-5">
             <h4>İçerik Bulunamadı</h4>
             <p>Aradığınız görsel bellekte veya favorilerde bulunamadı.</p>
-            <a href="index.html" class="btn btn-outline-warning mt-2">Ana Sayfaya Dön</a>
+            <a href="./index.html" class="btn btn-outline-warning mt-2">Ana Sayfaya Dön</a>
           </div>`;
       return;
     }
