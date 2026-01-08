@@ -39,10 +39,20 @@ export async function saveToFavorites(item, source) {
     if (!normalized) return false;
 
     // Aynı tarihli içerik daha önce eklenmiş mi?
-    const exists = await db.favorites
+let exists;
+
+if (normalized.source === 'NASA_LIBRARY') {
+    exists = await db.favorites
+        .where('image')
+        .equals(normalized.image)
+        .count();
+} else {
+    exists = await db.favorites
         .where('date')
         .equals(normalized.date)
         .count();
+}
+
 
     if (exists) return false;
 
