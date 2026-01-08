@@ -60,17 +60,23 @@ export async function getAllFavorites() {
 /* =========================================================
    API CACHE KAYDET (APOD)
 ========================================================= */
-export async function saveToCache(data) {
-    if (!data?.date) return;
-    await db.cache.put(data);
+export async function saveToCache(key, data) {
+    if (!key || !data) return;
+
+    await db.cache.put({
+        date: key,
+        data
+    });
 }
 
 /* =========================================================
    API CACHE OKU (APOD)
 ========================================================= */
-export async function getFromCache(date) {
-    return db.cache.get(date);
+export async function getFromCache(key) {
+    const cached = await db.cache.get(key);
+    return cached ? cached.data : null;
 }
+
 
 /* =========================================================
    FAVORİ NORMALİZASYONU
