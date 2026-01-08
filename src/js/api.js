@@ -7,6 +7,7 @@
 import { getFromCache, saveToCache } from './storage.js';
 
 /* ================= API AYARLARI ================= */
+/* ücretsiz keydir o yüzden envlemedim isteyen nasa apisine gidip kendide alabilir */
 const MY_NASA_KEY = 'dsLTRqUp57ofjeULyOov2ptQbHcJg4iQNmw8QHFt';
 const APOD_BASE_URL = 'https://api.nasa.gov/planetary/apod';
 
@@ -68,7 +69,7 @@ export async function getDailyPhoto(date = '') {
     }
 
     const url = `${APOD_BASE_URL}?api_key=${MY_NASA_KEY}&date=${targetDate}`;
-    const result = await fetchWithFallback(url, '/data/sample.json');
+    const result = await fetchWithFallback(url, './data/sample.json');
 
     // sample.json dizi dönerse ilk eleman alınır
     const data = Array.isArray(result.data)
@@ -93,7 +94,7 @@ export async function getDailyPhoto(date = '') {
 ================================================== */
 export async function getApodArchive(count = 12) {
     const url = `${APOD_BASE_URL}?api_key=${MY_NASA_KEY}&count=${count}`;
-    const result = await fetchWithFallback(url, '/data/sample.json');
+    const result = await fetchWithFallback(url, './data/sample.json');
 
     // UI uyumlu veri yapısı
     const normalized = result.data.map(item => ({
@@ -122,7 +123,7 @@ export async function searchNasaImages(query = 'galaxy') {
 
     const { data, isSample } = await fetchWithFallback(
         url,
-        '/data/sample-images.json'
+        './data/sample-images.json'
     );
 
     const items = data.collection?.items || [];
@@ -167,7 +168,7 @@ export async function getAsteroidData() {
 
     const { data } = await fetchWithFallback(
         url,
-        '/data/sample-asteroids.json'
+        './data/sample-asteroids.json'
     );
 
     return data.near_earth_objects?.[today] || [];
@@ -184,7 +185,7 @@ export async function getSpaceWeather() {
 
     const { data } = await fetchWithFallback(
         url,
-        '/data/sample-weather.json'
+        './data/sample-weather.json'
     );
 
     // En güncel 5 olay
