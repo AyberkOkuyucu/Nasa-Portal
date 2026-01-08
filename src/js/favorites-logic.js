@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (item.source === 'NASA_LIBRARY') {
             detailBtnHtml = `
                 <a
-                    href="library-detail.html?favId=${item.id}"
+                    href="./library-detail.html?favId=${item.id}"
                     class="btn btn-sm btn-outline-info"
                 >
                     Detay
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             // APOD verileri tarih parametresiyle detail.html'e gider
             detailBtnHtml = `
                 <a
-                    href="detail.html?date=${item.date}"
+                    href="./detail.html?date=${item.date}"
                     class="btn btn-sm btn-outline-info"
                 >
                     Detay
